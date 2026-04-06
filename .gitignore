@@ -1,0 +1,13 @@
+# Ignore everything by default
+*
+
+# Whitelist
+!.gitignore
+!settings.json
+!skills/
+!skills/**
+
+# Re-ignore noise inside skills
+.DS_Store
+skills/.DS_Store
+skills/.claude/
