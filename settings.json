@@ -14,21 +14,6 @@
   "otelHeadersHelper": "$HOME/.claude/bin/jellyfish-telemetry-headers",
   "alwaysThinkingEnabled": true,
   "effortLevel": "medium",
-  "mcpServers": {
-    "figma": {
-      "type": "http",
-      "url": "https://mcp.figma.com/mcp",
-      "headers": {
-        "Authorization": "Bearer $FIGMA_API_TOKEN"
-      }
-    },
-    "mcp-atlassian": {
-      "command": "/opt/homebrew/bin/uvx",
-      "args": [
-        "mcp-atlassian"
-      ]
-    }
-  },
   "enabledPlugins": {
     "clangd-lsp@claude-plugins-official": true
   }
