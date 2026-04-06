@@ -26,8 +26,7 @@
       "command": "/opt/homebrew/bin/uvx",
       "args": [
         "mcp-atlassian"
-      ],
-      "env": {}
+      ]
     }
   },
   "enabledPlugins": {
