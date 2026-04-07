@@ -114,6 +114,7 @@ graph TD
 
 ### General Writing Tips
 
+- **Never use `---` as a section divider.** Use headings to separate sections instead.
 - Prefer callouts over parenthetical asides for important notes.
 - Use code blocks liberally for any technical content.
 - Keep paragraphs concise — one idea per paragraph.
