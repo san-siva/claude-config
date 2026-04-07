@@ -1,6 +1,6 @@
 ---
 name: create-markdown
-description: Write well-structured markdown following a consistent style guide. Covers general markdown conventions and blogkit-md specifics when writing for @san-siva/blogkit-md.
+description: Write well-structured markdown — docs, READMEs, notes, guides, or blog posts. Use this skill any time markdown needs to be created or edited.
 user_invocable: true
 ---
 
@@ -66,7 +66,7 @@ Always specify the language:
 
 ````markdown
 ```typescript
-const x: string = "hello";
+const x: string = 'hello';
 ```
 
 ```bash
