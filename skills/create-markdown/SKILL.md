@@ -1,57 +1,47 @@
 ---
 name: create-markdown
-description: Write markdown content for blogkit-md (@san-siva/blogkit-md). Follows the blogkit style guide — frontmatter, heading hierarchy, callouts, code blocks, and Mermaid diagrams.
+description: Write well-structured markdown following a consistent style guide. Covers general markdown conventions and blogkit-md specifics when writing for @san-siva/blogkit-md.
 user_invocable: true
 ---
 
 # create-markdown
 
-Write a markdown file for the blogkit-md renderer (`@san-siva/blogkit-md`). This is an opinionated blog post renderer — markdown is not rendered as a plain document but as a structured, visually rich blog post.
+Write markdown following a consistent style guide. Works for any markdown — docs, READMEs, notes, blog posts, guides.
+
+When writing for `@san-siva/blogkit-md`, also apply the blogkit-specific rules in the section below.
 
 ## Steps
 
-1. Ask the user what they want to write about (topic, title, brief outline) if not already provided.
-2. Draft the markdown following the style guide below.
-3. Show the result and ask if they'd like any adjustments.
+1. Ask the user what they want to write (topic, title, brief outline) if not already provided.
+2. Ask if this is for blogkit-md or general markdown.
+3. Draft the markdown following the style guide below.
+4. Show the result and ask if they'd like any adjustments.
 
 ---
 
-## Style Guide
+## General Style Guide
+
+### Headings
+
+- Use `#` for the document title (one per file).
+- Use `##` for major sections, `###` for subsections.
+- Don't skip levels (e.g. `##` → `####`).
+- Keep headings short and scannable.
 
 ### Frontmatter
 
-Always start with YAML frontmatter:
+Use YAML frontmatter when metadata is needed:
 
 ```markdown
 ---
-title: Your Post Title
-description: A short, one or two sentence description shown below the title.
+title: Your Title
+description: A short description.
 ---
 ```
 
-- `title` is required — rendered as the `BlogHeader` component.
-- `description` is required — shown as the subtitle.
-- Do NOT add an H1 heading when frontmatter title is provided (it would be stripped anyway).
-
----
-
-### Heading Hierarchy
-
-| Level | Purpose | Layout effect |
-|-------|---------|---------------|
-| `##` | Major section | Creates a new `BlogSection` |
-| `###` | Subsection within a section | Creates a nested subsection |
-| `####` `#####` `######` | Minor headings | Rendered as bold text, no layout change |
-
-- Use `##` and `###` intentionally — they drive the visual layout.
-- Don't skip levels (e.g. `##` → `####`) — it breaks the section hierarchy.
-- Content before the first `##` becomes an untitled intro section.
-
----
-
 ### Callouts
 
-Use GitHub-style blockquote alerts:
+GitHub-style blockquote alerts:
 
 ```markdown
 > [!NOTE]
@@ -70,54 +60,40 @@ Use GitHub-style blockquote alerts:
 > A danger or destructive action.
 ```
 
-Plain `>` blockquotes render as info-style callouts.
-
----
-
 ### Code Blocks
 
 Always specify the language:
 
-```markdown
-    ```typescript
-    const x: string = "hello";
-    ```
-
-    ```bash
-    npm install -g @san-siva/blogkit-md
-    ```
-
-    ```json
-    { "key": "value" }
-    ```
+````markdown
+```typescript
+const x: string = "hello";
 ```
 
----
+```bash
+npm install my-package
+```
+
+```json
+{ "key": "value" }
+```
+````
 
 ### Mermaid Diagrams
 
-Use fenced code blocks with `mermaid`:
-
-```markdown
-    ```mermaid
-    graph TD
-      A[Start] --> B[Process] --> C[End]
-    ```
+````markdown
+```mermaid
+graph TD
+  A[Start] --> B[Process] --> C[End]
 ```
-
----
+````
 
 ### Tables
 
-Standard markdown tables are supported (header + rows):
-
 ```markdown
 | Column A | Column B | Column C |
-|----------|----------|----------|
+| -------- | -------- | -------- |
 | value    | value    | value    |
 ```
-
----
 
 ### Task Lists
 
@@ -126,24 +102,49 @@ Standard markdown tables are supported (header + rows):
 - [ ] Pending item
 ```
 
----
-
 ### Inline Formatting
 
-| Syntax | Use |
-|--------|-----|
-| `**bold**` | Emphasis, key terms |
-| `_italic_` | Titles, subtle emphasis |
-| `` `code` `` | Inline code, commands, filenames |
-| `[text](url)` | Links |
-| `![alt](url)` | Images |
-
----
+| Syntax        | Use                              |
+| ------------- | -------------------------------- |
+| `**bold**`    | Emphasis, key terms              |
+| `_italic_`    | Titles, subtle emphasis          |
+| `` `code` ``  | Inline code, commands, filenames |
+| `[text](url)` | Links                            |
+| `![alt](url)` | Images                           |
 
 ### General Writing Tips
 
-- Write for long-form reading — blogkit-md is optimised for articles, not quick docs.
-- Keep intro paragraphs before the first `##` short (2–4 sentences max).
-- Each `##` section should be self-contained and scannable.
 - Prefer callouts over parenthetical asides for important notes.
 - Use code blocks liberally for any technical content.
+- Keep paragraphs concise — one idea per paragraph.
+- Use lists for three or more related items rather than inline prose.
+
+---
+
+## blogkit-md Rules
+
+Apply these **in addition** to the general guide when writing for `@san-siva/blogkit-md`.
+
+### Frontmatter
+
+`title` and `description` are both required:
+
+```markdown
+---
+title: Your Post Title
+description: A short, one or two sentence description shown below the title.
+---
+```
+
+- Do NOT add an `#` H1 — it would be stripped when frontmatter title is present.
+
+### Heading Hierarchy
+
+| Level                   | Purpose                     | Layout effect                           |
+| ----------------------- | --------------------------- | --------------------------------------- |
+| `##`                    | Major section               | Creates a new `BlogSection`             |
+| `###`                   | Subsection within a section | Creates a nested subsection             |
+| `####` `#####` `######` | Minor headings              | Rendered as bold text, no layout change |
+
+- Content before the first `##` becomes an untitled intro section — keep it short (2–4 sentences).
+- Don't use section separators (`---`) — they are handled automatically.
