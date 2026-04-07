@@ -45,20 +45,27 @@ GitHub-style blockquote alerts:
 
 ```markdown
 > [!NOTE]
+>
 > Something the reader should know.
 
 > [!TIP]
+>
 > A helpful suggestion.
 
 > [!IMPORTANT]
+>
 > Critical information.
 
 > [!WARNING]
+>
 > Something that could go wrong.
 
 > [!CAUTION]
+>
 > A danger or destructive action.
 ```
+
+The blank `>` line between the type and content is required.
 
 ### Code Blocks
 
