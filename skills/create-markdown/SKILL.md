@@ -17,8 +17,6 @@ When writing for `@san-siva/blogkit-md`, also apply the blogkit-specific rules i
 3. Draft the markdown following the style guide below.
 4. Show the result and ask if they'd like any adjustments.
 
----
-
 ## General Style Guide
 
 ### Headings
@@ -126,8 +124,6 @@ graph TD
 - Use code blocks liberally for any technical content.
 - Keep paragraphs concise — one idea per paragraph.
 - Use lists for three or more related items rather than inline prose.
-
----
 
 ## blogkit-md Rules
 
