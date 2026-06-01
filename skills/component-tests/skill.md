@@ -24,11 +24,17 @@ ExtensionType=beta # beta or prod
 LogLevel=debug # debug, info, warn, error, silent
 ExtensionPath=/path/to/extension/dist/chrome
 AppExExtensionPath=/path/to/extension/dist/chrome
+
 WORKDAY_USER=bharper
 WORKDAY_PASS=Welcome2019%
 
 DAPDEV_USER=autouser
 DAPDEV_PASS=nuY7k%B28ezwsFYwf4h^v
+
+# Required for localhost tenant login (Global.loginAsAdmin → infinity-helpers.getInfinityCredentials)
+# Missing/blank values cause: "locator.fill: value: expected string, got undefined"
+USEAST2MAIN_USER=san_siva
+USEAST2MAIN_PASS=tycnuw-kobxeQ-gopge7
 ```
 
 ## 3. Run Playwright tests
