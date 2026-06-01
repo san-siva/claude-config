@@ -100,6 +100,8 @@ graph TD
 | value    | value    | value    |
 ```
 
+- **Never use code spans (backticks) in table headers** — they don't render properly. Write the header as plain text or `**bold**` instead, and reserve `` `code` `` for body cells. e.g. use `Flag` or `**Flag**` as the header, not `` `--flag` ``.
+
 ### Task Lists
 
 ```markdown
@@ -117,9 +119,17 @@ graph TD
 | `[text](url)` | Links                            |
 | `![alt](url)` | Images                           |
 
+### Horizontal rules are banned
+
+**Never emit a horizontal rule to separate sections.** This applies to every horizontal-rule syntax — `---`, `***`, `___`, or any line of three-or-more `-`/`*`/`_` on its own. There are exactly two valid uses of `---` in a document, and nothing else:
+
+1. The opening and closing fences of a YAML frontmatter block at the very top of the file.
+2. The dashes inside a table's header-separator row (e.g. `| ---- | ---- |`).
+
+To break up content, use a heading (`##`, `###`) — never a rule. If you are about to write a `---` line that is not one of the two cases above, delete it and add a heading or just a blank line instead.
+
 ### General Writing Tips
 
-- **Never use `---` as a section divider.** Use headings to separate sections instead.
 - Prefer callouts over parenthetical asides for important notes.
 - Use code blocks liberally for any technical content.
 - Keep paragraphs concise — one idea per paragraph.
