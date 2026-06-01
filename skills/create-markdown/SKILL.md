@@ -100,7 +100,7 @@ graph TD
 | value    | value    | value    |
 ```
 
-- **Never use code spans (backticks) in table headers** — they don't render properly. Write the header as plain text or `**bold**` instead, and reserve `` `code` `` for body cells. e.g. use `Flag` or `**Flag**` as the header, not `` `--flag` ``.
+- **Never use any text-formatting syntax in table headers** — no code spans (backticks), no `**bold**`, no `_italic_`. They don't render properly in header cells. Write headers as plain text only (e.g. use `Flag`, not `` `--flag` `` or `**Flag**`). Formatting like `` `code` `` is fine in body cells.
 
 ### Task Lists
 
