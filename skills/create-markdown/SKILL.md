@@ -25,6 +25,7 @@ When writing for `@san-siva/blogkit-md`, also apply the blogkit-specific rules i
 - Use `##` for major sections, `###` for subsections.
 - Don't skip levels (e.g. `##` → `####`).
 - Keep headings short and scannable.
+- **No numbers in `#`, `##`, or `###` headings.** Numbers are only allowed in `####` and deeper headings, or in ordered lists.
 
 ### Frontmatter
 
