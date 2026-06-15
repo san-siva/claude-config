@@ -11,7 +11,11 @@ Steps to build and run Playwright component tests. This only applies to the `/Us
 ## 1. Build for Playwright
 
 ```sh
+# For Adopt V1
 npm run package:component-test:chrome:beta
+
+# For Adopt V2 (Default unless specified)
+npm run package:component-test:chrome:beta:shared-store
 ```
 
 ## 2. Set up environment variables
