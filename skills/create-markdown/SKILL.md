@@ -26,6 +26,21 @@ When writing for `@san-siva/blogkit-md`, also apply the blogkit-specific rules i
 - Don't skip levels (e.g. `##` → `####`).
 - Keep headings short and scannable.
 - **No numbers in `#`, `##`, or `###` headings.** Numbers are only allowed in `####` and deeper headings, or in ordered lists.
+- **No flow arrows in any heading** — never use `→`, `-->`, `➜`, or similar to depict a sequence in a heading. Write a plain descriptive phrase (e.g. `#### Batch, encode, and send the Beacon`, not `#### Batch → Beacon → collector`) and put the flow in the body text or a diagram.
+
+### Break content into sections with headings
+
+Structure content with real headings, not bold-text labels. Any of these patterns should become a heading (`####` or deeper) instead:
+
+- A standalone bold line acting as a group label — `**Security**` → `#### Security`.
+- A bold lead-in that opens a paragraph — `**Consumer** — binds the input topic…` → `#### Consumer` with the sentence moved to the body below.
+- Lettered or numbered inline captions — `**(a) Content → background**`, `**1. Bootstrap**`, `Gate 1 — …` → each becomes its own heading.
+
+Rules for the conversion:
+
+- **Move the description into the body.** The heading is a short label; the explanatory sentence (often after an `—` or `:`) goes on the line below it, not in the heading.
+- **Nest by depth, never skip a level.** A label that sits under a `####` block becomes `#####` (e.g. `##### Gate 1 — confidence judge` under `#### Routing decision`).
+- **Strip numbers, arrows, and `=` from the heading text** per the Headings rules above — rephrase so the label reads as a plain noun phrase.
 
 ### Frontmatter
 
@@ -84,7 +99,29 @@ npm install my-package
 ```
 ````
 
+### Code references and line numbers
+
+- **Never cite a source location as `file:line` in prose.** Do not write things like `EmbedderActor.java:112` or "see `Content.ts:28`" in sentences or bullets.
+- When you reference specific code, show it in a fenced code block and put the location as a **comment on the first line** of that block, e.g.:
+
+  ````markdown
+  ```ts
+  // packages/functional-errors/src/content/Content.ts:28 — initialize()
+  this.port = Browser.runtime.connect({ name: 'functional-errors' });
+  ```
+  ````
+
+- If you don't have the real code to show, reference the file and symbol by **name only** (`ConfigWatcher.setFunctionalErrorsConfig`) and omit the line number entirely.
+- Quote code verbatim from the source; elide irrelevant lines with `...`. Never paraphrase or invent code inside a code block.
+
+### Prefer code snippets over prose for technical detail
+
+- When describing how code behaves, **show the code**. Dense bullet lists that narrate code ("`start()` does an initial scan then attaches an observer with these options…") are hard to digest — replace them with a short one-line caption followed by the actual snippet.
+- Structure walkthroughs as **numbered steps**, each a bold caption + one code block, rather than long paragraphs.
+
 ### Mermaid Diagrams
+
+Use a Mermaid diagram for any architecture, data flow, sequence, or decision logic — a diagram beats a paragraph for anything with more than two moving parts. Color-code node classes when a distinction matters and add a short legend.
 
 ````markdown
 ```mermaid
@@ -92,6 +129,8 @@ graph TD
   A[Start] --> B[Process] --> C[End]
 ```
 ````
+
+- **Do not add an ASCII-art fallback** (or any duplicate rendering) alongside a Mermaid diagram. Target viewers render Mermaid; a fallback is redundant noise. One diagram, one representation.
 
 ### Tables
 
