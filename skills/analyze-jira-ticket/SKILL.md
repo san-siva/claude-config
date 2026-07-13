@@ -8,18 +8,13 @@ user_invocable: true
 
 - Analyze a specific JIRA ticket and its relationship to the broader Nexthink codebase (Extension, API, Protobufs).
 - Automate the local environment setup (branches/worktrees) using internal skills.
-- Generate a structured `TASK.md` implementation guide.
+- Generate a standardized implementation guide (`TASK-[SPACE]-[TICKET_NUMBER].md`) and output it directly to the `~/Work/TASKS/` directory.
 
 # Context
 
 - **Team:** Nexthink Engineering (WebExtension)
 - **Base Directory:** `~/Work/`
-- **Primary Repositories:**
-  - `appex-adopt.extension/main`
-  - `appex.extension/main`
-  - `adopt.api-json-schema`
-  - `data-platform.protobufs`
-  - `appex.dashboard-ui`
+- All Nexthink repositories are placed under the work directory `~/Work/*`
 
 # Steps
 

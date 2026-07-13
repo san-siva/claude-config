@@ -8,6 +8,8 @@ user_invocable: true
 
 Steps to build and run Playwright component tests. This only applies to the `/Users/santhosh.siva/Work/appex-adopt.extension` repo.
 
+> You do not need to start any services manually. Playwright will automatically spin up the web server and handle other required dependencies.
+
 ## 1. Build for Playwright
 
 ```sh
